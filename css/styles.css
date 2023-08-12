@@ -11323,3 +11323,193 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+.dizme_tm_skills .wrapper {
+  width: 100%;
+  height: auto;
+  clear: both;
+  display: flex;
+  align-items: center;
+}
+.dizme_tm_section{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.dizme_tm_about span {
+  font-size: 30px;
+  font-weight: 700;
+  color: #f75023;
+  display: inline-block;
+  margin-bottom: 6px;
+  margin-right: 8px;
+}
+.dizme_tm_all_wrap, .dizme_tm_all_wrap * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border
+}
+.skill-item {
+  position: relative;
+  height: 175px;
+}
+/* Add this CSS to your stylesheet */
+.skill-item {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.skill-item img {
+  max-width: 60%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.skill-item:hover img {
+  transform: scale(1.1); /* Adjust the scale factor as needed */
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.skill-item:hover .backdrop {
+  opacity: 1;
+}
+
+.skill-name {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.dizme_tm_about {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding-top: 35px;
+  position: relative;
+}
+.dizme_tm_about .wrapper {
+  width: 100%;
+  height: auto;
+  clear: both;
+  display: flex;
+  align-items: center;
+}
+.dizme_tm_about .left {
+  width: 50%;
+  padding-right: 60px;
+}
+.dizme_tm_about .left .image {
+  position: relative;
+}
+.dizme_tm_about .left .image img {
+  max-height: 800px;
+}
+.dizme_tm_about .numbers.year {
+  top: 120px;
+  left: -80px;
+}
+
+.dizme_tm_about .numbers {
+  position: absolute;
+}
+.dizme_tm_about .numbers.project {
+  bottom: 70px;
+  right: -30px;
+}
+body.dark .dizme_tm_about .numbers .wrapper {
+  background-color: #4b4f5c;
+  box-shadow: none;
+}
+.dizme_tm_about .numbers.project .wrapper {
+  padding: 8px 20px 8px 20px;
+}
+body.dark .dizme_tm_about .numbers .wrapper {
+  background-color: #4b4f5c;
+  box-shadow: none;
+}
+/* @media (max-width: 1600px) */
+.dizme_tm_about .numbers .wrapper {
+  padding: 15px 20px 18px 20px;
+}
+.dizme_tm_about .numbers .wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 25px 0px 65px rgba(54,32,152,.11);
+  border-radius: 8px;
+  padding: 14px 20px 14px 16px;
+}
+.dizme_tm_about img{
+  border-radius: 100px 50px 50px;
+}
+body.dark .dizme_tm_about .numbers .wrapper {
+    background-color: #4b4f5c;
+    box-shadow: none;
+}
+.dizme_tm_about .numbers .wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 25px 0px 65px rgba(54,32,152,.11);
+    border-radius: 8px;
+    /* padding: 24px 40px 21px 26px; */
+    padding: 12px 20px 12px 16px;
+}
+.dizme_tm_button a:before, .dizme_tm_button button:before {
+  position: absolute;
+  z-index: 0;
+  background-color: #f75023;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  height: 60%;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.dizme_tm_button a, .dizme_tm_button button {
+  text-decoration: none;
+  color: #fff;
+  background-color: #000;
+  display: inline-block;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  border-radius: 50px;
+  border: 2px solid #f75023;
+  padding: 4px 20px 4px 20px;
+  position: relative;
+  overflow: hidden;
+}
+/* a {
+  color: var(--bs-link-color);
+  text-decoration: underline;
+}
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+} */
+.dizme_tm_about .numbers .wrapper .name {
+  font-size: 16px;
+}
+.dizme_tm_about .wrapper {
+    width: 100%;
+    height: auto;
+    clear: both;
+    display: flex;
+    align-items: center;
+}
+
+
+
