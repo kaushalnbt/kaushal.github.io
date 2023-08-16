@@ -671,80 +671,63 @@
                     I Want To Hear From You
                 </h3>
             </div>
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- * * SB Forms Contact Form * *-->
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- This form is pre-integrated with SB Forms.-->
-            <!-- To make this form functional, sign up at-->
-            <!-- https://startbootstrap.com/solution/contact-forms-->
-            <!-- to get an API token!-->
-            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+            <form
+                id="contactForm"
+                action="https://formspree.io/f/xvojkybp"
+                method="post"
+            >
                 <div class="row align-items-stretch mb-5">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <!-- Name input-->
                             <input class="form-control" id="name" type="text" placeholder="Your Name *"
-                                data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="name:required">
+                                   value="" name="name" required/>
+                            <div class="invalid-feedback" >
                                 A name is required.
                             </div>
                         </div>
                         <div class="form-group">
-                            <!-- Email address input-->
                             <input class="form-control" id="email" type="email" placeholder="Your Email *"
-                                data-sb-validations="required,email" />
-                            <div class="invalid-feedback" data-sb-feedback="email:required">
+                                   value="" name="email" required/>
+                            <div class="invalid-feedback">
                                 An email is required.
                             </div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">
+                            <div class="invalid-feedback">
                                 Email is not valid.
                             </div>
                         </div>
                         <div class="form-group mb-md-0">
-                            <!-- Phone number input-->
-                            <input class="form-control" id="phone" type="tel" placeholder="Your Phone *"
-                                data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">
+                            <input class="form-control" id="phone" name="phone" type="tel" placeholder="Your Phone *"
+                                   value="" required/>
+                            <div class="invalid-feedback">
                                 A phone number is required.
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group form-group-textarea mb-md-0">
-                            <!-- Message input-->
-                            <textarea class="form-control" id="message" placeholder="Your Message *"
-                                data-sb-validations="required"></textarea>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">
+                            <textarea class="form-control" id="message" name="message" placeholder="Your Message *"
+                                      value=""></textarea>
+                            <div class="invalid-feedback">
                                 A message is required.
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Submit success message-->
-                <!---->
-                <!-- This is what your users will see when the form-->
-                <!-- has successfully submitted-->
                 <div class="d-none" id="submitSuccessMessage">
                     <div class="text-center text-white mb-3">
                         <div class="fw-bolder">Form submission successful!</div>
-                        To activate this form, sign up at
+                        <!-- To activate this form, sign up at
                         <br />
-                        <a
-                            href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a> -->
                     </div>
                 </div>
-                <!-- Submit error message-->
-                <!---->
-                <!-- This is what your users will see when there is-->
-                <!-- an error submitting the form-->
                 <div class="d-none" id="submitErrorMessage">
                     <div class="text-center text-danger mb-3">
                         Error sending message!
                     </div>
                 </div>
-                <!-- Submit Button-->
                 <div class="text-center">
-                    <button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">
+                    <button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">
                         Send Message
                     </button>
                 </div>
@@ -1188,6 +1171,37 @@ Proposal PDF and Directly Send the Proposal PDF through Email.
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <!-- AJAX For Form -->
+    <script>
+        var form = document.getElementById("contactForm");
+        var successMessage = document.getElementById("submitSuccessMessage");
+        var errorMessage = document.getElementById("submitErrorMessage");
+    
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault();
+            var data = new FormData(form);
+    
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+    
+                if (response.ok) {
+                    successMessage.classList.remove("d-none"); // Display the success message
+                    errorMessage.classList.add("d-none"); // Hide error message if shown
+                    form.reset();
+                } else {
+                    errorMessage.classList.remove("d-none"); // Display error message
+                }
+            } catch (error) {
+                console.error("Connection error:", error);
+            }
+        });
+    </script>
 </body>
 
 </html>
